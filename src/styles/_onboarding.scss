@@ -1,0 +1,133 @@
+// Variables
+$primary-color: #4CAF50; // green
+$secondary-color: #888;
+$font-family: 'Georgia', serif;
+$background-color: #ffffff;
+$facebook-color: #4267B2;
+
+body, html {
+  height: 100%;
+  background-color: $background-color;
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboarding-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+
+  .phone-frame {
+    margin-bottom: 30px;
+
+    .logo {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .brand-name {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .welcome-text {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin-bottom: 20px;
+    }
+
+    .facebook-button {
+      padding: 10px 20px;
+      border: 2px solid $facebook-color;
+      border-radius: 25px;
+      background: none;
+      color: $facebook-color;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: $facebook-color;
+        color: white;
+      }
+    }
+  }
+
+  .onboarding-content {
+    .headline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin: 10px 0 20px;
+      padding: 0 10px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        margin: 0 4px;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s;
+
+        &.active {
+          background-color: $primary-color;
+          width: 20px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .skip-button, .continue-button {
+        flex: 1;
+        margin: 0 5px;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .skip-button {
+        background: none;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+
+        &:hover {
+          background: $primary-color;
+          color: white;
+        }
+      }
+
+      .continue-button {
+        background: $primary-color;
+        color: white;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  width: 80px;
+  transform: scale(1);
+  animation: growLogo 2s ease forwards;
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInTitle 2s ease forwards;
+  animation-delay: 1.5s;
+}
+
+/* Animations */
+@keyframes growLogo {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

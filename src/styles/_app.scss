@@ -1,0 +1,6 @@
+@use 'layout.scss';
+
+#app {
+  @extend %flexDicColumn;
+  gap: 2rem;
+}

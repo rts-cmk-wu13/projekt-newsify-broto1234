@@ -1,0 +1,24 @@
+
+%flex {
+  display: flex;
+  // align-items: center;
+  gap: 0.5rem;
+}
+
+%flexSpB {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%gridColumnTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+%flexDicColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
