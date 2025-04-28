@@ -3,16 +3,6 @@ $primary-color: #4CAF50; // green
 $secondary-color: #888;
 $font-family: 'Georgia', serif;
 $background-color: #ffffff;
-$facebook-color: #4267B2;
-
-body, html {
-  height: 100%;
-  background-color: $background-color;
-  font-family: $font-family;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .onboarding-container {
   width: 100%;
@@ -24,36 +14,8 @@ body, html {
     margin-bottom: 30px;
 
     .logo {
-      width: 60px;
+      width: 100%;
       margin-bottom: 10px;
-    }
-
-    .brand-name {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 8px;
-    }
-
-    .welcome-text {
-      font-size: 1rem;
-      color: $secondary-color;
-      margin-bottom: 20px;
-    }
-
-    .facebook-button {
-      padding: 10px 20px;
-      border: 2px solid $facebook-color;
-      border-radius: 25px;
-      background: none;
-      color: $facebook-color;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-
-      &:hover {
-        background: $facebook-color;
-        color: white;
-      }
     }
   }
 
@@ -87,7 +49,7 @@ body, html {
 
         &.active {
           background-color: $primary-color;
-          width: 20px;
+          width: 2rem;
           border-radius: 5px;
         }
       }
