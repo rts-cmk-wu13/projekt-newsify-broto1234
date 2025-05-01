@@ -1,14 +1,17 @@
 @use 'layout.scss';
+@use 'allstyle.scss';
 @use 'variables.scss' as var;
 
 .footer {
   // position: absolute;
   // bottom: 0;
+  width: 100%;
+  margin: 0 auto;
   // aspect-ratio: 16/9;
   // left: 0;
   // right: 0;
   padding: 0.6rem;
-  margin-block-start: 3rem;
+  // margin-block-start: 3rem;
   box-shadow: 0 -0.2rem 0.4rem rgba(0, 0, 0, 0.1);
   font-family: "Open Sans", sans-serif;
 
@@ -20,6 +23,9 @@
     text-align: center;
     & .active {
       color: var.$green-clr;
+    }
+    & p {
+      font-size: 0.6rem;
     }
   }
 }
