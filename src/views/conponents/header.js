@@ -5,7 +5,7 @@ export default function header() {
   divElm.classList = "header";
 
   divElm.innerHTML = `
-    <img src="${logoNewsify}" class="logo" alt="" />  
+    <img src="${logoNewsify}" class="header--logo" alt="" />  
   `
   return divElm;
 }

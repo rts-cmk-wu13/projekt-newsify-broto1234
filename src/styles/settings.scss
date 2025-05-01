@@ -1,0 +1,53 @@
+@use 'layout.scss';
+@use 'variables.scss' as var;
+
+.setting {
+  @extend %flexDicColumn;
+  // position: relative;
+  // margin-block-start: 1rem;
+  // height: 100vh;
+  // gap: 5rem;
+  // justify-content: space-between;
+}
+.category {
+  @extend %flexSpB;
+  gap: 2rem;
+  padding: 0.3rem;
+  // max-width: 10rem;
+  // margin-inline: auto;
+  // align-items: center;
+
+  &__main {
+    @extend %flexDicColumn;
+    width: 100%;
+    margin: 2rem auto 0.5rem;
+    margin-block-end: 4rem;
+    padding: 0.5rem;
+    text-align: center;
+    gap: 0.7rem;
+  }
+  &--heading {
+    font-family: 'Open Sans', serif;
+    color: var.$green-clr;
+  }
+
+  & label {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  & input[type="checkbox"] {
+    transform: scale(1.5);
+  }
+}
+
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  border: 1px solid green;
+  background: none;
+  color: green;
+  border-radius: 10px;
+  cursor: pointer;
+}

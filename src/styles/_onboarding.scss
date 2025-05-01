@@ -6,16 +6,16 @@ $background-color: #ffffff;
 
 .onboarding-container {
   width: 100%;
-  max-width: 400px;
-  padding: 20px;
+  max-width: 20rem;
+  margin-inline: auto;
+  padding: 0.3rem;
   text-align: center;
 
   .phone-frame {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 
     .logo {
       width: 100%;
-      margin-bottom: 10px;
     }
   }
 
@@ -23,25 +23,25 @@ $background-color: #ffffff;
     .headline {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
 
     .description {
       font-size: 1rem;
       color: $secondary-color;
-      margin: 10px 0 20px;
-      padding: 0 10px;
+      margin-block: 0.6rem 0.8rem;
+      padding-inline: 0.5rem;
     }
 
     .pagination {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 1.3rem;
 
       .dot {
-        height: 8px;
-        width: 8px;
-        margin: 0 4px;
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-inline: 0.5rem;
         background-color: $secondary-color;
         border-radius: 50%;
         display: inline-block;
@@ -50,7 +50,7 @@ $background-color: #ffffff;
         &.active {
           background-color: $primary-color;
           width: 2rem;
-          border-radius: 5px;
+          border-radius: 0.2rem;
         }
       }
     }
@@ -58,14 +58,14 @@ $background-color: #ffffff;
     .buttons {
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
+      padding-inline: 1rem;
 
       .skip-button, .continue-button {
         flex: 1;
-        margin: 0 5px;
-        padding: 12px;
+        margin-inline: 0.3rem;
+        padding: 0.7rem;
         font-size: 1rem;
-        border-radius: 25px;
+        border-radius: 1.5rem;
         border: none;
         cursor: pointer;
         transition: background 0.3s;
