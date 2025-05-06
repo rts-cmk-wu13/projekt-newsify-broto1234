@@ -79,8 +79,7 @@ export default function home() {
           articlesElm.append(createArticle(article));
         });            
       secNameElm.append(SecElm,articlesElm);
-      sectionElm.append(secNameElm);
-     
+      sectionElm.append(secNameElm);     
 
     secNameElm.addEventListener('click', ()=> {  
       const articleList = secNameElm.querySelector('.articles__list');  

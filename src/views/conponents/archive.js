@@ -78,30 +78,14 @@ export default function home() {
     // divElm.append(sectionElm); 
     
     // show articls
-    const sectsAll = document.querySelectorAll('.section');
-    // const sectionsAll = Array.from(sectsAll);
-    // console.log(sectsAll)
-    sectsAll.forEach( sect => {
-      // console.log(sect);      
-      sect.addEventListener('click', ()=> {  
-        const articleList = sect.querySelector('.articles__list');  
-        console.log(articleList);
-        const chevronImg = sect.querySelector('.chevron--img');  
-        articleList.classList.toggle('showActive');
-        chevronImg.classList.toggle('rotate');
-      })
+    secNameElm.addEventListener('click', ()=> {  
+      const articleList = secNameElm.querySelector('.articles__list');  
+      console.log(articleList);
+      const chevronImg = secNameElm.querySelector('.chevron--img');  
+      articleList.classList.toggle('showActive');
+      chevronImg.classList.toggle('rotate');
     })
-
     //-------
-    // const sect = document.querySelector('.section__name');
-    // sect.addEventListener('click', ()=> {
-    //   const articleList = document.querySelector('.articles__list');  
-    //   const chevronImg = document.querySelector('.chevron--img');  
-
-    //   articleList.classList.toggle('showActive');
-    //   chevronImg.classList.toggle('rotate');
-    // })
-    //------------
 
     
   }
