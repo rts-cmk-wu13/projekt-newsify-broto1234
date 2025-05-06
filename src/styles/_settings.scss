@@ -1,0 +1,112 @@
+@use 'layout.scss';
+@use 'variables.scss' as var;
+
+.setting {
+  // @extend %flexDicColumn;
+}
+
+.category {
+  @extend %flexSpB;
+  gap: 2rem;
+  padding: 0.3rem;
+  border-bottom: 0.03rem solid var.$bdr-clr;
+  
+  
+  &__main {
+    @extend %flexDicColumn;
+    width: 100%;
+    margin: 2rem auto 0.5rem;
+    margin-block-end: 4rem;
+    padding: 0.5rem;
+    text-align: center;
+    gap: 0.7rem;
+
+    & :nth-child(3) {
+      border-top: 0.03rem solid var.$bdr-clr;
+    }
+  
+  }
+
+  &--heading {
+    font-family: 'Open Sans', serif;
+    color: var.$green-clr;
+  }
+
+  & span {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  & .switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 1.8rem;
+
+    & input {
+      display: none;
+      // opacity: 0;
+      // width: 0;
+      // height: 0;
+    }
+    & .slider {
+      position: absolute;
+      cursor: pointer;
+      width: 3.2rem;
+      height: 1.6rem;
+      right: 0.5rem; 
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        right: 1.8rem;
+        top: 0.2rem;
+        // left: 0.1rem;
+        // bottom: 0.4rem;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }      
+    }
+  }
+  // & input[type="checkbox"] {
+  //   transform: scale(1.5);
+  // }  
+input:checked + .slider {
+  background-color: var.$green-clr;
+}
+input:checked + .slider:before {
+  transform: translateX(1.6rem);
+}
+}
+
+.dark {
+  &--toggle {
+    margin-block-start: 2rem;
+    padding-inline: 0.3rem;
+    // width: 100%;
+    & input {
+      display: none;
+    }
+  }
+  &--label {
+  width: 100%;
+  // margin-top: 1.5rem;
+  font-family: var.$openSans--fnt;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  border: 1px solid var.$green-clr;
+  background: transparent;
+  color: var.$green-clr;
+  border-radius: 2rem;
+  cursor: pointer;
+
+  }
+}
+

@@ -133,6 +133,12 @@ export default function home() {
     return articleElm;
   }
 
+  // Dark mode--
+  if (localStorage.getItem('darkmode') === 'true') {
+    // document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute("data-mode", "dark");
+  }
+  //----
   
   return divElm;
 }

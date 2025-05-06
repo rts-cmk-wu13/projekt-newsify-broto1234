@@ -1,3 +1,4 @@
+import darkMode from "./conponents/darkmode";
 
 export default function setting() {
 
@@ -11,64 +12,63 @@ export default function setting() {
     const catElm = document.createElement("p");
     catElm.className = 'category--para';
     catElm.textContent = 'Categories';
-  categoriesContainer.append(headElm, catElm)
+  categoriesContainer.append(headElm, catElm);
+  
+    const storedCategories = JSON.parse(localStorage.getItem("nyt-categories")) || {};
 
-  
-  // const toggleDark = document.getElementById("toggleDark");
-  
-  const storedCategories = JSON.parse(localStorage.getItem("nyt-categories")) || {};
-  
-  const categories = ['europe','health', 'sports', 'business', 'travel'];
-      if (categories) {
-        categories.forEach(section => {
-          // console.log(section.section);          
-          const categoryKey = section.toLowerCase();
-          
-          // console.log(categoryKey);
-          
-          const isChecked = storedCategories[categoryKey] ?? true;
-  
-          const div = document.createElement("div");
-          div.className = "category";
-  
-          const label = document.createElement("label");
-          label.textContent = section;
-  
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.checked = isChecked;
-          checkbox.onchange = () => {
-            storedCategories[categoryKey] = checkbox.checked;
-            localStorage.setItem("nyt-categories", JSON.stringify(storedCategories));
-          };
-          // div.append(label);
-          div.append(label, checkbox);
-          categoriesContainer.append(div);
-        });
-      }
+    const categories = ['europe','health', 'sports', 'business', 'travel'];
+
+      categories.forEach(category => {
+        // console.log(section.section);          
+        const categoryKey = category.toLowerCase();          
+        // console.log(categoryKey);      
+        const isChecked = storedCategories[categoryKey] ?? true;
+        const catElm = document.createElement("div");
+        catElm.className = "category";
+        
+        const catName = document.createElement("span");
+        catName.textContent = category;
+
+          const labelElm = document.createElement("label");
+          labelElm.className = 'switch';
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = isChecked;
+            checkbox.addEventListener('change', () => {
+                storedCategories[categoryKey] = checkbox.checked;
+                localStorage.setItem("nyt-categories", JSON.stringify(storedCategories));
+            });
+            const sliderElm = document.createElement('span')
+            sliderElm.className ='slider';
+          labelElm.append(checkbox, sliderElm);
+        catElm.append(catName, labelElm);
+    categoriesContainer.append(catElm);
+    });
+    
+    //-----------Dark mode---------
+    const darkElm = document.createElement("div");
+    darkElm.className = 'dark--toggle';
+      const toggelLabelElm = document.createElement('label');
+      toggelLabelElm.className = "dark--label"
+      toggelLabelElm.textContent = 'Toogle dark mode';
+          const buttonElm = document.createElement('input');
+          buttonElm.type = "checkbox";
+          buttonElm.className = 'dark--btn'
+          // const checkbox = document.createElement("input");
+          toggelLabelElm.append(buttonElm);
+
+    darkElm.append(toggelLabelElm);
       
-      return categoriesContainer;
-    }
+      const toggleDark = darkElm.querySelector('.dark--btn');
+      // console.log(toggleDark);    
+      darkMode(toggleDark);
+
+  categoriesContainer.append(darkElm);    
 
     
-  // async function fetchCategories() {
-  //   try {
-  //     const res = await fetch("https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=cnTesjSt30g0HpdGvpWqPLOGVpl7TgMv");
-      
-  //     const data = await res.json();
+  return categoriesContainer;
+}
 
-  //     // console.log(data.results.filter( sect => sect.section == 'health' || sect.section == 'sports' || sect.section == 'business' || sect.section == 'travel'));    
-      
-  //     const categorieFilter = data.results.filter( sect => sect.section == 'health' || sect.section == 'sports' || sect.section == 'business' || sect.section == 'travel' || sect.section == 'arts');
-  //     // console.log(categorieFilter)
-
-      // const dataResults = data.results.slice(0, 10);
-    
-    // } catch (error) {
-    //   categoriesContainer.textContent = "Failed to load categories.";
-    //   console.error("Error fetching categories:", error);
-    // }
-  // }
   
   // toggleDark.addEventListener("click", () => {
   //   document.body.classList.toggle("dark");

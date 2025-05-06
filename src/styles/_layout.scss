@@ -17,8 +17,16 @@
   gap: 0.5rem;
 }
 
+%gridAutoOneColumn {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+
 %flexDicColumn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+

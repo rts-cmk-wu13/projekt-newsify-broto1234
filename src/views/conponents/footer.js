@@ -4,24 +4,20 @@ export default function footer() {
   divElm.className = "footer";
   divElm.innerHTML = `
     <ul class="footer__lists">
-      <li><a href="index.html" class="list active" data-sec="home"><i class='fas fa-home'></i><p>Home</p></a></li>
-      <li><a href="archive.html" class="list" data-sec="archive"><i class='far fa-bookmark'></i><p>Archive</p></a></li>
-      <li><a href="popular.html" class="list" data-sec="popular"><i class='far fa-star'></i><p>Popular</p></a></li>
-      <li><a href="setting.html" class="list" data-sec="setting"><i class='fas fa-cog'></i><p>Settings</p></a></li>
+      <li class="footer--list"><a href="index.html" class="list active" data-sec="home"><i class='fas fa-home'></i><p>Home</p></a></li>
+      <li class="footer--list"><a href="archive.html" class="list" data-sec="archive"><i class='far fa-bookmark'></i><p>Archive</p></a></li>
+      <li class="footer--list"><a href="popular.html" class="list" data-sec="popular"><i class='far fa-star'></i><p>Popular</p></a></li>
+      <li class="footer--list"><a href="setting.html" class="list" data-sec="setting"><i class='fas fa-cog'></i><p>Settings</p></a></li>
   </ul> `
   let path =  window.location.pathname;
-  console.log(path);
-  
-  
-  const currentPath = path.substring(1); 
-  
+  // console.log(path);  
+  const currentPath = path.substring(1);  
   const lists = divElm.querySelectorAll(".list");  
 
   lists.forEach( list => {
-    // console.log(list);
-    
+    // console.log(list);    
     const itemPath = list.getAttribute('href');
-    console.log(itemPath);
+    // console.log(itemPath);
     list.classList.remove('active');
     if(currentPath == itemPath) {
       list.classList.add('active');

@@ -31,5 +31,10 @@
   </div>
 
   <script src="src/views/onboardingOne.js"></script>
+  <script>// Dark mode--
+    if (localStorage.getItem('dark-mode') === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+    //----</script>
 </body>
 </html>

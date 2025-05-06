@@ -1,5 +1,7 @@
 import logo from '/logo.svg';
 import chevronicon from '/chevronicon.svg';
+import swiper from './swiper';
+import bookmark from './bookmark';
 
 export default function home() {
   const divElm = document.createElement("main") ;
@@ -23,32 +25,34 @@ export default function home() {
       sections.push(`${key}`);
     }
   }
-  // console.log(sections);
-  
+  // console.log(sections); 
   
   const baseURL = 'https://api.nytimes.com/svc/topstories/v2/';
-  const API_KEY = 'cnTesjSt30g0HpdGvpWqPLOGVpl7TgMv';
+  const API_KEY = import.meta.env.NYT_API_KEY;
   
   const newsContainer = document.querySelector(".news-container");
 
-  Promise.all( sections.map(section => 
+  Promise.all( sections.map((section, index) => 
     // console.log(section);
-    fectchNews(section)
+    fectchNews(section, index)
     ));
 
-  async function fectchNews(section) {
+  async function fectchNews(section, index) {
      const response = await  fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${section}&api-key=cnTesjSt30g0HpdGvpWqPLOGVpl7TgMv`)
     const data = await response.json()
     // console.log(data.response.docs.slice(0, 6));
     const sectionDataResults = data.response.docs;
-    showSection(section, sectionDataResults);      
+    showSection(section, sectionDataResults, index);      
   }
 
-  function showSection(section, articles) {
+  function showSection(section, articles, index) {
+    // console.log(index)
+
     // console.log(section);
-    // console.log(articles);        
+    // console.log(section.length)
+   
       const secNameElm = document.createElement('div');
-      secNameElm.className =  `section ${section}-section`;
+      secNameElm.className =  `section ${section}-section data-id = "${index}"`;
         const SecElm = document.createElement('div');
         SecElm.className =  'section__name';
           const spanElmOne = document.createElement('span');    
@@ -61,8 +65,9 @@ export default function home() {
           spanElmOne.append(spanImgElm, spanHeadingElm);
           
           const spanElmTwo = document.createElement('span');
-          spanElmTwo.className = ('chevron--img')
-            const spanImgElmTwo = document.createElement('img');
+          // spanElmTwo.className = ('chevron--img')
+          const spanImgElmTwo = document.createElement('img');
+          spanImgElmTwo.className = ('chevron--img')
             spanImgElmTwo.src = chevronicon;
           spanElmTwo.append(spanImgElmTwo);
         SecElm.append(spanElmOne, spanElmTwo);
@@ -74,64 +79,101 @@ export default function home() {
           articlesElm.append(createArticle(article));
         });            
       secNameElm.append(SecElm,articlesElm);
-    sectionElm.append(secNameElm);
-    // divElm.append(sectionElm); 
+      sectionElm.append(secNameElm);
+     
+
+    secNameElm.addEventListener('click', ()=> {  
+      const articleList = secNameElm.querySelector('.articles__list');  
+      console.log(articleList);
+      const chevronImg = secNameElm.querySelector('.chevron--img');  
+      articleList.classList.toggle('showActive');
+      chevronImg.classList.toggle('rotate');
+    })    
+
+    //-----
     
-    // show articls
-    const sectsAll = document.querySelectorAll('.section');
-    // const sectionsAll = Array.from(sectsAll);
-    // console.log(sectsAll)
-    sectsAll.forEach( sect => {
-      console.log(sect);      
-      sect.addEventListener('click', ()=> {  
-        const articleList = sect.querySelector('.articles__list');  
-        console.log(articleList);
-        const chevronImg = sect.querySelector('.chevron--img');  
-        articleList.classList.toggle('showActive');
-        chevronImg.classList.toggle('rotate');
-      })
-    })
+  // Bookmark -------
+  const bookmarks = sectionElm.querySelectorAll('.section');
+  // console.log(bookmarks); 
+  
+  bookmarks.forEach(book => {
+    // console.log(book);
+  })
+  //   // bookmark(bookmarks);      
+  
+  // bookmarks.forEach(bookmark => {
+  //   bookmark(bookmark);      
+  // })
+  
+  
+  // bookmarks.forEach(book => {
+  //   console.log(book);
+  // })
+  
+  // const bookmarks = secNameElm.querySelector('.section');
+  // console.log(bookmarks);
 
-    //-------
-    // const sect = document.querySelector('.section__name');
-    // sect.addEventListener('click', ()=> {
-    //   const articleList = document.querySelector('.articles__list');  
-    //   const chevronImg = document.querySelector('.chevron--img');  
-
-    //   articleList.classList.toggle('showActive');
-    //   chevronImg.classList.toggle('rotate');
-    // })
-    //------------
-
-    
   }
+
+  // const bookmarks = sectionElm.querySelector('.section');  
+  // console.log(bookmarks);
+  
+
+ 
 
   function createArticle(article) {
     // console.log(article);   
     const articleElm = document.createElement('div');
-    articleElm.className = 'article__card';
+    articleElm.className = 'article__content';
+      const articleContElm = document.createElement('div');
+      articleContElm.className = 'article__card';
     
-    // article image
-    const imgElm = document.createElement('img');
-    imgElm.className ='article__img';
-    imgElm.src = article.multimedia.default.url;
-    imgElm.alt = article.headline.main;
+      // article image
+        const imgElm = document.createElement('img');
+        imgElm.className ='article__img';
+        imgElm.src = article.multimedia.default.url;
+        imgElm.alt = article.headline.main;
 
-    const articleTextElm = document.createElement('div');
-    articleTextElm.className = 'article--text';
+        const articleTextElm = document.createElement('div');
+        articleTextElm.className = 'article--text';
+        
+          const headline = document.createElement('h6');
+          headline.textContent = article.headline.main;
+          
+          const absElm = document.createElement('p');
+          absElm.className = 'article--ellipsis';
+          absElm.textContent = article.abstract;
+        articleTextElm.append(headline, absElm);
+      articleContElm.append(imgElm, articleTextElm);
+    articleElm.append(articleContElm);
     
-    const headline = document.createElement('h6');
-    headline.textContent = article.headline.main;
-    
-    const absElm = document.createElement('p');
-    absElm.className = 'article--ellipsis';
-    absElm.textContent = article.abstract;
+    // Read article to a new page--  
+    // const readArticles = document.querySelectorAll('.article__card');
+    // // console.log(readArticles);
+    // readArticles.forEach(ar => {
+    //   ar.addEventListener('click',  () => {
+    //             window.open(article.web_url, '_blank');
+    //       });      
+    //   })
+    //------
 
-    articleTextElm.append(headline, absElm);
-    articleElm.append(imgElm, articleTextElm);
-    
+    // swipe articles-----
+    const containers = document.querySelectorAll('.articles__list');
+    containers.forEach(container => {
+      swiper(container);      
+    })
+    //--
+
     return articleElm;
   }
+
+
+  // Dark mode--
+  if (localStorage.getItem('darkmode') === 'true') {
+    // document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute("data-mode", "dark");
+  }
+  //----
 
   
   return divElm;

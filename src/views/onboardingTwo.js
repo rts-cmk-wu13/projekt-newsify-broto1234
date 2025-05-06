@@ -5,6 +5,7 @@ continueBtn.addEventListener('click', () => {
   window.location.href = "onboardingThree.html"; 
 });
 
-skipBtnBtn.addEventListener('click', () => {
+skipBtn.addEventListener('click', () => {
   window.location.href = "auth.html"; 
 });
+
