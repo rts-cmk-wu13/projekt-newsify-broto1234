@@ -23,39 +23,31 @@
       padding: 1rem;
       list-style: none;
       cursor: pointer;   
-      border-block-start: 0.05rem solid rgba(0, 0, 0, 0.4); 
-    
-      // &::after {
-      //   content: url('chevronicon.svg');
-      //   transition: transform 400ms;
-      //   // width: 1rem;
-      //   height: 1.2rem;
-      // }  
+
       & span {
         @extend %flex;
         align-items: center;
         padding: 0.5rem;
-
-        & img {
-          width: 0.7rem;
-        }
         
         & .section--title {
           text-transform: uppercase;
           font-size: 0.9rem;
           font-weight: 700;
-        }
-      }    
+        }        
+      }         
     }
 
-    &__list:last-child {
-      border-block-end: 0.05rem solid rgba(0, 0, 0, 0.4);
-    }
+    // &__list:last-child {
+    //   border-block-end: 0.05rem solid rgba(0, 0, 0, 0.4);
+    // }
   }
 }
 
 .articles__list {
   display: none;
+
+  overflow: clip;
+  touch-action: none;
 }
 
 .showActive {
@@ -64,43 +56,56 @@
 
 .rotate {
   transform: rotate(90deg);
+  // background-color: white;
 }
 
 .article {
+
+  &__content {
+    position: relative;
+  }
   
-  &__card{
-    @extend %gridColumnTwo;
-    padding: 1rem 0.5rem;
-    // margin-block: 1rem;
+  &__card {
+    @extend %gridAutoOneColumn;
+    position: relative;
+    padding: 1rem;
     background-color: white;
-    border-block-start: 0.05rem solid rgba(0, 0, 0, 0.4);
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
+    // margin-block: 1rem;
+    // border-block-start: 0.05rem solid rgba(0, 0, 0, 0.4);
     // overflow: hidden;
     // display: none;
   }
-
+  
   &__img {
-    width: 100%;
-    // height: 6rem;
+    width: 6rem;
+    height: 6rem;
   }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+  
+  &--text h6{
+    margin-block-end: 0.3rem;
+    font-size: 0.7rem;
+    font-family: 'Open Sans', serif;
+    // @extend %flexDicColumn;
+    // justify-content: center;
+    // gap: 0.5rem;
+    
+    // display: flex;
+    // flex-direction: column;
   }
 
   &--ellipsis {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: pre-wrap;
+    font-size: 0.6rem;
+    font-family: 'Open Sans', serif;
   }
 }
-
-// .section__name::after.active {
-//   transform: rotate(90deg);
-// }
+.animate {
+  transition: all 0.5s ease-in-out;
+}

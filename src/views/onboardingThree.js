@@ -5,6 +5,6 @@ continueBtn.addEventListener('click', () => {
   window.location.href = "auth.html"; 
 });
 
-skipBtnBtn.addEventListener('click', () => {
+skipBtn.addEventListener('click', () => {
   window.location.href = "auth.html"; 
 });
