@@ -1,0 +1,39 @@
+@use 'layout.scss';
+@use 'allstyle.scss';
+@use 'darkmode.scss';
+@use 'variables.scss' as var;
+
+.footer {
+  // position: absolute;
+  // bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.6rem;
+  box-shadow: 0 -0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  // aspect-ratio: 16/9;
+  // left: 0;
+  // right: 0;
+  // margin-block-start: 3rem;
+  font-family: "Open Sans", sans-serif;
+
+  &__lists {
+    @extend %flex;
+    justify-content: space-between;
+  }
+  & li {
+    text-align: center;
+    // color: black;
+    // background-color: red;
+
+    & a {
+      // color: #000;
+      // background-color: #fff;
+    }
+    & .active {
+      color: var.$green-clr;
+    }
+    & p {
+      font-size: 0.6rem;
+    }
+  }
+}
