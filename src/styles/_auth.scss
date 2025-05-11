@@ -1,0 +1,121 @@
+@use 'variables.scss' as var;
+
+.auth {
+
+  &__container {
+      width: 100%;
+      max-width: 12rem;
+      margin-inline: auto;
+      padding-block-start: 1.5rem;
+      text-align: center;
+      color: var.$text-clr;
+      // background-color: white;
+    }
+  &--img {
+    width: 3rem;
+  }
+
+  &--text {
+    font-size: 2rem;
+    color: var.$text-clr;
+  }
+
+  &--btn {
+    width: 100%;
+    padding: 1rem 0.7rem;
+    margin-bottom: 12px;
+    border-radius: 2rem;
+    background-color: var.$white-clr;
+    border: 0.01rem solid var.$bdr-clr;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // transition: opacity $transition-time;
+    color: var.$text-clr;
+    cursor: pointer;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+  }
+
+}
+
+.welcome {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: var.$text-clr;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: var.$text-clr;
+    
+    &::before, &::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid var.$text-clr;
+    }
+    
+    span {
+        padding: 0 10px;
+        color: inherit;
+    }
+}
+
+.pass--btn {
+  color: var.$white-clr;
+  background-color: var.$green-clr;
+    
+    &:hover {
+        // border-color: darken($divider-color, 20%);
+    }
+}
+
+.signup-link {
+    font-size: 0.8rem;
+    // color: inherit;
+    
+    a {
+        color: var.$green-clr;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Dark mode styles
+// body.dark-mode {
+//     background-color: $dark-bg;
+//     color: $dark-text;
+    
+//     .login-container {
+//         background-color: $dark-card;
+//         box-shadow: 0 4px 12px $dark-shadow;
+//     }
+    
+//     .divider {
+//         color: lighten($dark-bg, 30%);
+        
+//         &::before, &::after {
+//             border-bottom-color: lighten($dark-bg, 15%);
+//         }
+//     }
+    
+//     .password-btn {
+//         // border-color: lighten($dark-bg, 15%);
+//         color: $dark-text;
+        
+//         &:hover {
+//             // border-color: lighten($dark-bg, 25%);
+//         }
+//     }
+// }

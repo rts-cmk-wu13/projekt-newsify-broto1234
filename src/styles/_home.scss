@@ -1,0 +1,111 @@
+// @use 'src/style.scss';
+@use 'layout.scss';
+
+.main {
+  // height: 62vh;
+  
+  & input {
+    @extend %flex;
+    width: 90%;
+    margin:1rem auto;
+    padding: 0.5rem 0.3rem;
+    border: none;
+    border-radius: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.6rem;
+  }
+     
+  .section {
+
+    &__name {
+      @extend %flexSpB;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem;
+      list-style: none;
+      cursor: pointer;   
+
+      & span {
+        @extend %flex;
+        align-items: center;
+        padding: 0.5rem;
+        
+        & .section--title {
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          font-weight: 700;
+        }        
+      }         
+    }
+
+    // &__list:last-child {
+    //   border-block-end: 0.05rem solid rgba(0, 0, 0, 0.4);
+    // }
+  }
+}
+
+.articles__list {
+  display: none;
+  overflow: clip;
+  touch-action: none;  //touch-action: pan-y;
+}
+
+.showActive {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  // background-color: white;
+}
+
+.article {
+
+  &__content {
+    position: relative;
+  }
+  
+  &__card {
+    @extend %gridAutoOneColumn;
+    position: relative;
+    padding: 1rem;
+    background-color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    // margin-block: 1rem;
+    // border-block-start: 0.05rem solid rgba(0, 0, 0, 0.4);
+    // overflow: hidden;
+    // display: none;
+  }
+  
+  &__img {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  &--text h6{
+    margin-block-end: 0.3rem;
+    font-size: 0.7rem;
+    font-family: 'Open Sans', serif;
+    // @extend %flexDicColumn;
+    // justify-content: center;
+    // gap: 0.5rem;
+    
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  &--ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-wrap;
+    font-size: 0.6rem;
+    font-family: 'Open Sans', serif;
+  }
+}
+.animate {
+  transition: all 0.5s ease-in-out;
+}

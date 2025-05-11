@@ -1,0 +1,92 @@
+// Variables
+$primary-color: #4CAF50; // green
+$secondary-color: #888;
+$font-family: 'Georgia', serif;
+$background-color: #ffffff;
+
+.onboarding-container {
+  width: 100%;
+  max-width: 20rem;
+  margin: 2rem auto 0;
+  padding: 0.3rem;
+  text-align: center;
+
+  .phone-frame {
+    margin-bottom: 2rem;
+  }
+
+  .onboarding-content {
+    
+    .headline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin-block: 0.6rem 0.8rem;
+      padding-inline: 0.5rem;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.3rem;
+
+      .dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-inline: 0.5rem;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s;
+
+        &.active {
+          background-color: $primary-color;
+          width: 2rem;
+          border-radius: 0.2rem;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 1rem;
+
+      .skip-button, .continue-button {
+        flex: 1;
+        margin-inline: 0.3rem;
+        padding: 0.7rem;
+        font-size: 1rem;
+        border-radius: 1.5rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .skip-button {
+        background: none;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+
+        &:hover {
+          background: $primary-color;
+          color: white;
+        }
+      }
+
+      .continue-button {
+        background: $primary-color;
+        color: white;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
