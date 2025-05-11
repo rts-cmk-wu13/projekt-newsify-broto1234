@@ -10,6 +10,7 @@ console.log(loginBtn);
 //  else {
 //   logoutBtn.classList.add("hidden")
 // }
+import '../../styles/style.scss';
 
 loginBtn.addEventListener('click', () => {
   // console.log('hi');  

@@ -1,4 +1,5 @@
-import logoNewsify from '/logoNewsify.svg';
+import logoNewsify from '/src/assets/images/logoNewsify.svg';
+// import logo from '/logo.svg';
 
 export default function header() {
   const divElm = document.createElement("header");

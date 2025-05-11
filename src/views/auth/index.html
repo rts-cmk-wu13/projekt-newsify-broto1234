@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/public/logo.svg" />
+  <!-- <link rel="icon" type="image/svg+xml" href="src/assets/images/logo.svg" /> -->
+  <link rel="icon" type="image/svg+xml" href="/src/assets/images/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Auth - Newsify</title>
-  <link rel="stylesheet" href="src/styles/_auth.scss">
+  <!-- <link rel="stylesheet" href="src/styles/_auth.scss"> -->
 </head>
 <body>
   <div class="auth__container">        
     <div class="auth-logo">
       <div>
-        <img src="/public/logo.svg" alt="logo"  class="auth--img">
+        <img src="/src/assets/images/logo.svg" alt="logo"  class="auth--img">
         <h1 class="auth--text">Newsify</h1>
       </div>
       <p class="welcome">Welcome! Let's dive into your account!</p>
@@ -32,13 +33,13 @@
         Don't have an account? <a href="#">Sign up</a>
     </div>
     <dialog id="login-dialog">
-      <form action="index.html">
+      <form action="/src/views/home/index.html">
         <input type="password" name="password" id="">
         <button>Login</button>
       </form>
       <button onclick="closeLoginDialog()">Close</button>
     </dialog>
   </div>
-  <script type="module" src="/src/auth.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>

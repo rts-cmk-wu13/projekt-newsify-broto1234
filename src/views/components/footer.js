@@ -4,10 +4,10 @@ export default function footer() {
   divElm.className = "footer";
   divElm.innerHTML = `
     <ul class="footer__lists">
-      <li class="footer--list"><a href="index.html" class="list active" data-sec="home"><i class='fas fa-home'></i><p>Home</p></a></li>
-      <li class="footer--list"><a href="archive.html" class="list" data-sec="archive"><i class='far fa-bookmark'></i><p>Archive</p></a></li>
-      <li class="footer--list"><a href="popular.html" class="list" data-sec="popular"><i class='far fa-star'></i><p>Popular</p></a></li>
-      <li class="footer--list"><a href="setting.html" class="list" data-sec="setting"><i class='fas fa-cog'></i><p>Settings</p></a></li>
+      <li class="footer--list"><a href="/src/views/home/" class="list active" data-sec="home"><i class='fas fa-home'></i><p>Home</p></a></li>
+      <li class="footer--list"><a href="/src/views/archive/" class="list" data-sec="archive"><i class='far fa-bookmark'></i><p>Archive</p></a></li>
+      <li class="footer--list"><a href="/src/views/popular/" class="list" data-sec="popular"><i class='far fa-star'></i><p>Popular</p></a></li>
+      <li class="footer--list"><a href="/src/views/settings/" class="list" data-sec="setting"><i class='fas fa-cog'></i><p>Settings</p></a></li>
   </ul> `
   let path =  window.location.pathname;
   // console.log(path);  

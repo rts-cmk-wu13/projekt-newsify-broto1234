@@ -1,8 +1,9 @@
-import darkMode from "./conponents/darkmode";
+import darkMode from "./darkmode";
 
 export default function setting() {
 
   const categoriesContainer = document.createElement("main");
+
   categoriesContainer.className = 'category__main';
 
     const headElm = document.createElement("h2");

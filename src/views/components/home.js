@@ -1,5 +1,5 @@
-import logo from '/logo.svg';
-import chevronicon from '/chevronicon.svg';
+import logo from '/src/assets/images/logo.svg';
+import chevronicon from '/src/assets/images/chevronicon.svg';
 import swiper from './swiper';
 import bookmark from './bookmark';
 
@@ -47,7 +47,6 @@ export default function home() {
 
   function showSection(section, articles, index) {
     // console.log(index)
-
     // console.log(section);
     // console.log(section.length)
    
@@ -93,8 +92,7 @@ export default function home() {
     
   // Bookmark -------
   const bookmarks = sectionElm.querySelectorAll('.section');
-  // console.log(bookmarks); 
-  
+  // console.log(bookmarks);   
   bookmarks.forEach(book => {
     // console.log(book);
   })
