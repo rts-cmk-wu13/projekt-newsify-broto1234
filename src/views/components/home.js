@@ -19,7 +19,8 @@ export default function home() {
   const categories = JSON.parse(localStorage.getItem("nyt-categories"));
   // console.log(sections);
 
-  let sections = [];
+  let newSections = null;
+  let sections = newSections || [];
   for (const [key, value] of Object.entries(categories)) {
     if(value) {
       sections.push(`${key}`);
