@@ -7,19 +7,16 @@ $background-color: #ffffff;
 .onboarding-container {
   width: 100%;
   max-width: 20rem;
-  margin-inline: auto;
+  margin: 2rem auto 0;
   padding: 0.3rem;
   text-align: center;
 
   .phone-frame {
     margin-bottom: 2rem;
-
-    .logo {
-      width: 100%;
-    }
   }
 
   .onboarding-content {
+    
     .headline {
       font-size: 1.5rem;
       font-weight: bold;

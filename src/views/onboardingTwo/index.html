@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/public/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="/src/assets/images/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="/src/styles/style.scss"> -->
   <title>OnboardingTwo - Newsify</title>
-  <link rel="stylesheet" href="src/styles/_onboarding.scss">
 </head>
 <body>
-
   <div class="onboarding-container">
     <div class="phone-frame">
-      <img src="onboardingTwo.svg" alt="Newsify Logo" class="logo">
+      <img src="/src/assets/images/onboardingTwo.svg" alt="Newsify Logo" class="logo">
     </div>
     <div class="onboarding-content">
       <h2 class="headline">Become a Savvy Global Citizen.</h2>
@@ -29,14 +28,13 @@
       </div>
     </div>
   </div>
-
-  <script src="src/views/onboardingTwo.js"></script>
-  <script>
+  <script type="module" src="onboardingtwo.js"></script>
+  <!-- <script>
     // Dark mode--
   if (localStorage.getItem('dark-mode') === 'true') {
     document.documentElement.classList.add('dark');
   }
   //----
-  </script>
+  </script> -->
 </body>
 </html>
